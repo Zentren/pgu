@@ -281,7 +281,7 @@ class Container(widget.Widget):
             if dy_ < 0 and wrect.bottom > rect.top: continue
             dist.append((dx*dx+dy*dy,w))
         if not len(dist): return
-        dist.sort()
+        dist.sort(key=lambda x: x[0])
         d,w = dist.pop(0)
         w.focus()
         
