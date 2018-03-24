@@ -111,7 +111,7 @@ class TextArea(widget.Widget):
     # This function sets the cursor position according to an x/y value (such as by from a mouse click)
     def setCursorByXY(self, pos):
         (x, y) = pos
-        self.vpos = ((int) (y / self.line_h)) + self.vscroll
+        self.vpos = ((int) (y / self.line_h)) + int(self.vscroll) # FIXME: Is the casting of vscroll a hack?
         if (self.vpos >= len(self.lines)):
             self.vpos = len(self.lines) - 1
             
